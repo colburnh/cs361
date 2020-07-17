@@ -1,0 +1,85 @@
+7/17/2020 9:46:51 AM	This log contains information about the import schema operation into project 'HogwartsDatabase' on computer 'DESKTOP-UD435N0' by user 'Jered Abate'.
+7/17/2020 9:46:51 AM	Import of database schema has started.
+7/17/2020 9:47:01 AM	Gathering database credentials
+7/17/2020 9:47:01 AM	Gathering database options
+7/17/2020 9:47:01 AM	Gathering generic database scoped configuration option
+7/17/2020 9:47:01 AM	Gathering users
+7/17/2020 9:47:01 AM	Gathering roles
+7/17/2020 9:47:01 AM	Gathering application roles
+7/17/2020 9:47:01 AM	Gathering role memberships
+7/17/2020 9:47:01 AM	Gathering filegroups
+7/17/2020 9:47:01 AM	Gathering full-text catalogs
+7/17/2020 9:47:01 AM	Gathering assemblies
+7/17/2020 9:47:01 AM	Gathering certificates
+7/17/2020 9:47:01 AM	Gathering asymmetric keys
+7/17/2020 9:47:01 AM	Gathering symmetric keys
+7/17/2020 9:47:01 AM	Gathering encrypted symmetric keys
+7/17/2020 9:47:01 AM	Gathering schemas
+7/17/2020 9:47:01 AM	Gathering XML schema collections
+7/17/2020 9:47:01 AM	Gathering user-defined data types
+7/17/2020 9:47:01 AM	Gathering user-defined types
+7/17/2020 9:47:01 AM	Gathering table types
+7/17/2020 9:47:01 AM	Gathering unique keys for table types
+7/17/2020 9:47:01 AM	Gathering primary keys for table types
+7/17/2020 9:47:01 AM	Gathering indexes for table types
+7/17/2020 9:47:01 AM	Gathering check constraints for table types
+7/17/2020 9:47:01 AM	Gathering default constraints for table types
+7/17/2020 9:47:01 AM	Gathering partition functions
+7/17/2020 9:47:01 AM	Gathering partition schemes
+7/17/2020 9:47:02 AM	Gathering functions
+7/17/2020 9:47:02 AM	Gathering encrypted functions
+7/17/2020 9:47:02 AM	Gathering aggregates
+7/17/2020 9:47:02 AM	Gathering procedures
+7/17/2020 9:47:02 AM	Gathering encrypted procedures
+7/17/2020 9:47:02 AM	Gathering tables
+7/17/2020 9:47:02 AM	Gathering primary keys
+7/17/2020 9:47:02 AM	Gathering unique constraints
+7/17/2020 9:47:02 AM	Gathering foreign keys
+7/17/2020 9:47:02 AM	Gathering default constraints
+7/17/2020 9:47:02 AM	Gathering check constraints
+7/17/2020 9:47:02 AM	Gathering views
+7/17/2020 9:47:02 AM	Gathering encrypted views
+7/17/2020 9:47:02 AM	Gathering indexes
+7/17/2020 9:47:02 AM	Gathering statistics
+7/17/2020 9:47:02 AM	Gathering full-text index stoplists
+7/17/2020 9:47:02 AM	Gathering search property lists
+7/17/2020 9:47:02 AM	Gathering search properties
+7/17/2020 9:47:02 AM	Gathering full-text indexes
+7/17/2020 9:47:02 AM	Gathering column store indexes
+7/17/2020 9:47:02 AM	Gathering spatial indexes
+7/17/2020 9:47:02 AM	Gathering XML indexes
+7/17/2020 9:47:02 AM	Gathering Selective XML indexes
+7/17/2020 9:47:02 AM	Gathering encrypted triggers
+7/17/2020 9:47:02 AM	Gathering triggers
+7/17/2020 9:47:02 AM	Gathering encrypted and clr ddl triggers
+7/17/2020 9:47:02 AM	Gathering ddl triggers
+7/17/2020 9:47:02 AM	Gathering synonyms
+7/17/2020 9:47:02 AM	Gathering defaults
+7/17/2020 9:47:03 AM	Gathering data constraint uddt bindings
+7/17/2020 9:47:03 AM	Gathering rules
+7/17/2020 9:47:03 AM	Gathering data constraint uddt bindings
+7/17/2020 9:47:03 AM	Gathering message types
+7/17/2020 9:47:03 AM	Gathering queues
+7/17/2020 9:47:03 AM	Gathering contracts
+7/17/2020 9:47:03 AM	Gathering services
+7/17/2020 9:47:03 AM	Gathering event notifications
+7/17/2020 9:47:03 AM	Gathering remote service bindings
+7/17/2020 9:47:03 AM	Gathering broker priorities
+7/17/2020 9:47:03 AM	Gathering signatures
+7/17/2020 9:47:03 AM	Gathering data compression options
+7/17/2020 9:47:03 AM	Gathering sequence types
+7/17/2020 9:47:03 AM	Gathering security policies
+7/17/2020 9:47:03 AM	Gather column encryption keys
+7/17/2020 9:47:03 AM	Gathering column master keys
+7/17/2020 9:47:03 AM	Gathering external data sources
+7/17/2020 9:47:03 AM	Gathering external file formats
+7/17/2020 9:47:03 AM	Gathering external tables
+7/17/2020 9:47:03 AM	Gathering extended properties
+7/17/2020 9:47:03 AM	Gathering credentials
+7/17/2020 9:47:03 AM	Gathering logins
+7/17/2020 9:47:03 AM	Gathering server audits
+7/17/2020 9:47:03 AM	Scanning project for duplicate elements
+7/17/2020 9:47:04 AM	Finished duplicate element processing
+7/17/2020 9:47:04 AM	Finished importing database.
+7/17/2020 9:47:04 AM	A summary of the import was saved to the following location: C:\Users\Jered Abate\source\repos\TheSortingHat\HogwartsDatabase\Import Schema Logs\HogwartsDatabase_20200717044651.log
+7/17/2020 9:47:04 AM	Click Finish to continue...

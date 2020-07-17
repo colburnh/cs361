@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HogwartsDatabase", "HogwartsDatabase\HogwartsDatabase.sqlproj", "{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56530DA-C3B0-43F0-82A6-F35DAB2EA3A3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE903B51-713D-416F-B805-FC8C76425AD7}
+	EndGlobalSection
+EndGlobal
