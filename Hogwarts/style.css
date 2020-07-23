@@ -43,6 +43,7 @@ a:hover{
 }
 
 .navlist{
+    text-indent: 200px;
     margin: 0;
     padding: 0;
 }
