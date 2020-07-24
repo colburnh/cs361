@@ -2,9 +2,5 @@ C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\bin\Debug\HogwartsDatab
 C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\bin\Debug\HogwartsDatabase.dll
 C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\bin\Debug\HogwartsDatabase.pdb
 C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\HogwartsDatabase.sqlprojAssemblyReference.cache
-C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\Model.xml
-C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\refactor.xml
-C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\postdeploy.sql
-C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\predeploy.sql
 C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\HogwartsDatabase.dll
 C:\Users\Jered Abate\Source\Repos\cs361\HogwartsDatabase\obj\Debug\HogwartsDatabase.pdb
