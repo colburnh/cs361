@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Classes] (Table)
+       [dbo].[ClassYearType] (Table)
+       [dbo].[Houses] (Table)
+       [dbo].[ProfessorClasses] (Table)
+       [dbo].[Professors] (Table)
+       [dbo].[ScheduledClasses] (Table)
+       [dbo].[ScheduledClassesStudent] (Table)
+       [dbo].[Students] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Classes] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ProfessorClasses] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ProfessorClasses] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ScheduledClasses] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ScheduledClasses] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ScheduledClassesStudent] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ScheduledClassesStudent] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Students] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Students] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Students] (Foreign Key)
+
+** Supporting actions
