@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Classes</title>
+</head>
+<body>
+    <center>
+        <h1>Hot to Connect DQL Server database % Display data</h1>
+        <h2>Django WebTutorials</h2>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Prof ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Active</th>
+            </tr>
+            {% for datadisplay in profsqlserverconn %}
+            <tr>
+                <td>{{datadisplay.ProfessorID}}</td>
+                <td>{{datadisplay.LastName}}</td>
+                <td>{{datadisplay.FirstName}}</td>
+                <td>{{datadisplay.Active}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

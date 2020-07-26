@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Connect SQL Server From Django</title>
+</head>
+<body>
+    <center>
+        <h1>Classes Display</h1>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Class ID</th>
+                <th>Name</th>
+                <th>Year1Type</th>
+                <th>Year2Type</th>
+                <th>Year3Type</th>
+                <th>Year4Type</th>
+                <th>Year5Type</th>
+                <th>Year6Type</th>
+                <th>Year7Type</th>
+                <th>Location</th>
+                <th>Max Capacity</th>
+                <th>Number of Houses</th>
+
+            </tr>
+            {% for datadisplay in classessqlserverconn %}
+            <tr>
+                <td>{{datadisplay.ClassId}}</td>
+                <td>{{datadisplay.Name}}</td>
+                <td>{{datadisplay.Year1Type}}</td>
+                <td>{{datadisplay.Year2Type}}</td>
+                <td>{{datadisplay.Year3Type}}</td>
+                <td>{{datadisplay.Year4Type}}</td>
+                <td>{{datadisplay.Year5Type}}</td>
+                <td>{{datadisplay.Year6Type}}</td>
+                <td>{{datadisplay.Year7Type}}</td>
+                <td>{{datadisplay.Location}}</td>
+                <td>{{datadisplay.MaxCapacity}}</td>
+                <td>{{datadisplay.NumberofHouses}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

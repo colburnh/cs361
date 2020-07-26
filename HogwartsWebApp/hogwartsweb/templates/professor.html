@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Professor</title>
+</head>
+<body>
+    <center>
+        <h1>Professor Display</h1>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Prof ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Active</th>
+            </tr>
+            {% for datadisplay in profsqlserverconn %}
+            <tr>
+                <td>{{datadisplay.ProfessorID}}</td>
+                <td>{{datadisplay.LastName}}</td>
+                <td>{{datadisplay.FirstName}}</td>
+                <td>{{datadisplay.Active}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

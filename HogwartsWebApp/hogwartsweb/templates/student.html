@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Student</title>
+</head>
+<body>
+    <center>
+        <h1>Student Display</h1>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Student ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Year</th>
+                <th>Elective 1ar</th>
+                <th>Elective 2</th>
+            </tr>
+            {% for datadisplay in studentsqlserverconn %}
+            <tr>
+                <td>{{datadisplay.StudentID}}</td>
+                <td>{{datadisplay.LastName}}</td>
+                <td>{{datadisplay.FirstName}}</td>
+                <td>{{datadisplay.Year}}</td>
+                <td>{{datadisplay.ElectiveOneID}}</td>
+                <td>{{datadisplay.ElectiveOTwoID}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
