@@ -31,3 +31,17 @@ class classessqlserverconn(models.Model):
     Location = models.CharField(max_length=100)
     MaxCapacity = models.IntegerField()
     NumberofHouses = models.IntegerField()
+
+class schedulesqlserverconn(models.Model):
+    ScheduledClassID = models.IntegerField()
+    ProfessorClassID = models.IntegerField()
+    HouseID = models.IntegerField()
+    StartTime = models.DateTimeField()
+    EndTime = models.DateTimeField()
+    DaysoftheWeek = models.CharField(max_length=100)
+    Year = models.IntegerField()
+    MaxOccupancy = models.IntegerField()
+    Occupancy = models.IntegerField()
+    RemainingSpots = models.IntegerField()
+    Location = models.CharField(max_length=100)
+    NumberofHouses = models.IntegerField()

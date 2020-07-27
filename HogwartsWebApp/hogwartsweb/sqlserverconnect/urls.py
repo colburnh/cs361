@@ -19,8 +19,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('professor/',views.profconnsql),
-    path('student/',views.studentconnsql),
-    path('classes/',views.classesconnsql)
+    path('',views.index, name='index'),
+    path('professor/',views.profconnsql, name='prof'),
+    path('student/',views.studentconnsql, name='student'),
+    path('classes/',views.classesconnsql, name='classes'),
+    path('schedule/',views.scheduleconnsql, name='schedule'),
 
 ]

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Professor</title>
+</head>
+<body>
+    <center>
+        <h1>Scheduled Classes</h1>
+        <hr/>
+        <a href="{% url 'index' %}">Home<a/>
+        <a href="{% url 'prof' %}">View Professors<a/>
+        <a href="{% url 'student' %}">View Students<a/>
+        <a href="{% url 'classes' %}">View Classes<a/>
+        <a href="{% url 'schedule' %}">View Schedule<a/>
+        <table border="1">
+            <tr>
+                <th>ScheduledClassID</th>
+                <th>ProfessorClassID</th>
+                <th>HouseID</th>
+                <th>StartTime</th>
+                <th>EndTime</th>
+                <th>StartTime</th>
+                <th>DaysoftheWeek</th>
+                <th>Year</th>
+                <th>MaxOccupancy</th>
+                <th>Occupancy</th>
+                <th>RemainingSpots</th>
+                <th>Location</th>
+            </tr>
+            {% for datadisplay in profsqlserverconn %}
+            <tr>
+                <td>{{datadisplay.ScheduledClassID}}</td>
+                <td>{{datadisplay.ProfessorClassID}}</td>
+                <td>{{datadisplay.HouseID}}</td>
+                <td>{{datadisplay.StartTime}}</td>
+                <td>{{datadisplay.EndTime}}</td>
+                <td>{{datadisplay.DaysoftheWeek}}</td>
+                <td>{{datadisplay.Year}}</td>
+                <td>{{datadisplay.MaxOccupancy}}</td>
+                <td>{{datadisplay.Occupancy}}</td>
+                <td>{{datadisplay.RemainingSpots}}</td>
+                <td>{{datadisplay.Location}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

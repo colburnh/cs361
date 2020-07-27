@@ -2,8 +2,10 @@ from django.shortcuts import render
 from sqlserverconnect.models import profsqlserverconn
 import pyodbc
 
-def home(request):
+#Request for index
+def index(request):
     return render(request, 'index.html')
+
 
 #Request for Professor
 def profconnsql(request):
@@ -38,3 +40,13 @@ def classesconnsql(request):
     result = cursor.fetchall()
     return render(request, 'classes.html', {'classessqlserverconn': result})
 
+#Request for Scheduled Classes
+def scheduleconnsql(request):
+    conn = pyodbc.connect('Driver={sql server};'
+                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
+                          'Database=HogwartsDatabase;'
+                          'Trusted_Connection=yes;')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM ScheduledClasses")
+    result = cursor.fetchall()
+    return render(request, 'schedule.html', {'schedulesqlserverconn': result})
