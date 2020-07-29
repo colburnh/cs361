@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>Classes Add</title>
+</head>
+<body>
+    <center>
+        <h1>Classes Add</h1>
+        <hr/>
+        <a href="{% url 'index' %}">Home<a/>
+        <a href="{% url 'prof' %}">View Professors<a/>
+        <a href="{% url 'student' %}">View Students<a/>
+        <a href="{% url 'classes' %}">View Classes<a/>
+        <a href="{% url 'schedule' %}">View Schedule<a/>
+        </br>
+        <form method="POST">
+            {% csrf_token %}
+            <table border ="1">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" placeholder="Student First  Name .." name="Name"
+                </tr>
+                <tr>
+                    <td>Year1Type</td>
+                    <td><input type="text" placeholder="Year1Type .." name="Year1Type"
+                </tr>
+                <tr>
+                    <td>Year2Type</td>
+                    <td><input type="text" placeholder="Year2Type .." name="Year2Type"
+                </tr>
+                <tr>
+                    <td>Year3Type</td>
+                    <td><input type="text" placeholder="Year3Type .." name="Year3Type"
+                </tr>
+                <tr>
+                    <td>Year4Type</td>
+                    <td><input type="text" placeholder="Year4Type .." name="Year4Type"
+                </tr>
+                <tr>
+                    <td>Year5Type</td>
+                    <td><input type="text" placeholder="Year5Type .." name="Year5Type"
+                </tr>
+                <tr>
+                    <td>Year6Type</td>
+                    <td><input type="text" placeholder="Year6Type .." name="Year6Type"
+                </tr>
+                <tr>
+                    <td>Year7Type</td>
+                    <td><input type="text" placeholder="Year7Type .." name="Year7Type"
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td><input type="text" placeholder="Location .." name="Location"
+                </tr>
+                <tr>
+                    <td>MaxCapacity</td>
+                    <td><input type="text" placeholder="MaxCapacity .." name="MaxCapacity"
+                </tr>
+                <tr>
+                    <td>NumberofHouses</td>
+                    <td><input type="text" placeholder="NumberofHouses .." name="NumberofHouses"
+                </tr>
+            </table>
+            <input type="submit" value="Submit" onclick="return alert('Classes Added')" />
+         </form>
+    </center>
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>ProfessorAdd</title>
+</head>
+<body>
+    <center>
+        <h1>Student Add</h1>
+        <hr/>
+        <a href="{% url 'index' %}">Home<a/>
+        <a href="{% url 'prof' %}">View Professors<a/>
+        <a href="{% url 'student' %}">View Students<a/>
+        <a href="{% url 'classes' %}">View Classes<a/>
+        <a href="{% url 'schedule' %}">View Schedule<a/>
+        </br>
+        <form method="POST">
+            {% csrf_token %}
+            <table border ="1">
+                <tr>
+                    <td> Last Name</td>
+                    <td><input type="text" placeholder="Student Last Name .." name="LastName"
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" placeholder="Student First  Name .." name="FirstName"
+                </tr>
+                <tr>
+                    <td>HouseID</td>
+                    <td><input type="text" placeholder="HouseID .." name="HouseID"
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td><input type="text" placeholder="Year .." name="Year"
+                </tr>
+                <tr>
+                    <td>ElectiveOneID</td>
+                    <td><input type="text" placeholder="ElectiveOneID .." name="ElectiveOneID"
+                </tr>
+                <tr>
+                    <td>ElectiveOTwoID</td>
+                    <td><input type="text" placeholder="ElectiveOTwoID .." name="ElectiveOTwoID"
+                </tr>
+            </table>
+            <input type="submit" value="Submit" onclick="return alert('Student Added')" />
+         </form>
+    </center>
+</body>

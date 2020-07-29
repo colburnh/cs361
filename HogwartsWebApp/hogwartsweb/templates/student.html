@@ -11,12 +11,15 @@
         <a href="{% url 'student' %}">View Students<a/>
         <a href="{% url 'classes' %}">View Classes<a/>
         <a href="{% url 'schedule' %}">View Schedule<a/>
+        </br>
+        <a href="{% url 'studentAdd' %}">Add Student<a/>
         <table border="1">
             <tr>
                 <th>Student ID</th>
                 <th>Last Name</th>
                 <th>First Name</th>
                 <th>Year</th>
+                <th>HouseID</th>
                 <th>Elective 1ar</th>
                 <th>Elective 2</th>
             </tr>
@@ -25,6 +28,7 @@
                 <td>{{datadisplay.StudentID}}</td>
                 <td>{{datadisplay.LastName}}</td>
                 <td>{{datadisplay.FirstName}}</td>
+                <td>{{datadisplay.HouseID}}</td>
                 <td>{{datadisplay.Year}}</td>
                 <td>{{datadisplay.ElectiveOneID}}</td>
                 <td>{{datadisplay.ElectiveOTwoID}}</td>
@@ -33,5 +37,6 @@
             </tr>
             {% endfor %}
         </table>
+        <a href="{% url 'studentAdd' %}">Add Student<a/>
     </center>
 </body>
