@@ -24,5 +24,5 @@ urlpatterns = [
     path('student/',views.studentconnsql, name='student'),
     path('classes/',views.classesconnsql, name='classes'),
     path('schedule/',views.scheduleconnsql, name='schedule'),
-
+    path('/profAdd',views.profAdd, name='profAdd'),
 ]

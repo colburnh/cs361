@@ -13,7 +13,7 @@
         <a href="{% url 'schedule' %}">View Schedule<a/>
         <table border="1">
             <tr>
-                <th>Prof ID</th>
+                <th>Professor ID</th>
                 <th>Last Name</th>
                 <th>First Name</th>
                 <th>Active</th>
@@ -24,8 +24,10 @@
                 <td>{{datadisplay.LastName}}</td>
                 <td>{{datadisplay.FirstName}}</td>
                 <td>{{datadisplay.Active}}</td>
+                <td><a href="/proffesor/delete/{{datadisplay.ProfessorID}}">Delete<a/></td>
             </tr>
             {% endfor %}
         </table>
+        <a href="{% url 'profAdd' %}">Add Professor<a/>
     </center>
 </body>
