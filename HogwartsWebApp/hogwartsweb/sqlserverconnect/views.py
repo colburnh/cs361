@@ -54,7 +54,10 @@ def profAdd(request):
             insertvalues.FirstName = request.POST.get('FirstName')
             insertvalues.Active = request.POST.get('Active')
             cursor = connect()
-            cursor.execute("INSERT INTO Professors VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.Active+"')")
+            cursor.execute("EXECUTE usp_insert_professor @firstName='"
+                           +insertvalues.LastName+ "', @LastName='"
+                           +insertvalues.FirstName+ "', @Active='"
+                           +insertvalues.Active+ "'")
             cursor.commit()
             return render(request, 'profAdd.html')
     else:
@@ -76,7 +79,18 @@ def classesAdd(request):
             insertvalues.MaxCapacity = request.POST.get('MaxCapacity')
             insertvalues.NumberofHouses = request.POST.get('NumberofHouses')
             cursor = connect()
-            cursor.execute("INSERT INTO Classes VALUES ('"+insertvalues.Name+"', '"+insertvalues.Year1Type+"', '"+insertvalues.Year2Type+"','"+insertvalues.Year3Type+"' ,'"+insertvalues.Year4Type+"' ,'"+insertvalues.Year5Type+"' ,'"+insertvalues.Year6Type+"' ,'"+insertvalues.Year7Type+"''"+insertvalues.Location+"', '"+insertvalues.MaxCapacity+"' , '"+insertvalues.NumberofHouses+"')")
+            cursor.execute("EXECUTE usp_insert_class @Name='"
+                            +insertvalues.Name+"', @Year1Type='"
+                            +insertvalues.Year1Type+"', @Year2Type='"
+                            +insertvalues.Year2Type+"', @Year3Type='"
+                            +insertvalues.Year3Type+"', @Year4Type='"
+                            +insertvalues.Year4Type+"', @Year5Type='"
+                            +insertvalues.Year5Type+"', @Year6Type='"
+                            +insertvalues.Year6Type+"', @Year7Type='"
+                            +insertvalues.Year7Type+"',@Location='"
+                            +insertvalues.Location+"', @MaxCapacity='"
+                            +insertvalues.MaxCapacity+"', @numberOfHouses='"
+                            +insertvalues.NumberofHouses+"'")
             cursor.commit()
             return render(request, 'classesAdd.html')
     else:
@@ -93,7 +107,13 @@ def studentAdd(request):
             insertvalues.ElectiveOneID = request.POST.get('ElectiveOneID')
             insertvalues.ElectiveOTwoID = request.POST.get('ElectiveOTwoID')
             cursor = connect()
-            cursor.execute("INSERT INTO Students VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.HouseID+"','"+insertvalues.Year+"')")
+            cursor.execute("EXECUTE usp_insert_student @LastName='"
+                            +insertvalues.LastName+ "', @FirstName='"
+                            +insertvalues.FirstName+ "', @HouseID='"
+                            +insertvalues.HouseID+ "', @Year='"
+                            +insertvalues.Year+ "', @ElectiveOneID='"
+                            +insertvalues.ElectiveOneID+ "', @ElectiveTwoID='"
+                            +insertvalues.ElectiveOTwoID+ "'")
             cursor.commit()
             return render(request, 'studentAdd.html')
     else:

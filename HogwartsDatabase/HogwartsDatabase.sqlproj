@@ -87,5 +87,8 @@
     <Build Include="dbo\Stored Procedures\usp_get_classes.sql" />
     <Build Include="dbo\Stored Procedures\usp_get_students.sql" />
     <Build Include="dbo\Stored Procedures\usp_get_scheduledclasses.sql" />
+    <Build Include="dbo\Stored Procedures\usp_insert_class.sql" />
+    <Build Include="dbo\Stored Procedures\usp_insert_professor.sql" />
+    <Build Include="dbo\Stored Procedures\usp_insert_student.sql" />
   </ItemGroup>
 </Project>
