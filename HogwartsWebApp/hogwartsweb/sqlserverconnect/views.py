@@ -8,64 +8,52 @@ import pyodbc
 def index(request):
     return render(request, 'index.html')
 
+def connect():
+    #  Used to create connection to the database
+    conn = pyodbc.connect('Driver={sql server};'
+                          'Server=DESKTOP-UD435N0\SQLEXPRESS;'
+                          'Database=TheSortingHat;'
+                          'Trusted_Connection=yes;')
+    cursor = conn.cursor()
+    return cursor
 
 #Request for Professor
 def profconnsql(request):
-    conn=pyodbc.connect('Driver={sql server};'
-                        'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                        'Database=HogwartsDatabase;'
-                        'Trusted_Connection=yes;')
-    cursor=conn.cursor()
+    cursor = connect()
     cursor.execute("SELECT * FROM Professors")
     result=cursor.fetchall()
     return render(request,'professor.html',{'profsqlserverconn':result})
 
 #Request for Student
 def studentconnsql(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
-    cursor = conn.cursor()
+    cursor = connect()
     cursor.execute("SELECT * FROM Students")
     result = cursor.fetchall()
     return render(request, 'student.html', {'studentsqlserverconn': result})
 
 #Request for Classes
 def classesconnsql(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
-    cursor = conn.cursor()
+    cursor = connect()
     cursor.execute("SELECT * FROM Classes")
     result = cursor.fetchall()
     return render(request, 'classes.html', {'classessqlserverconn': result})
 
 #Request for Scheduled Classes
 def scheduleconnsql(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
-    cursor = conn.cursor()
+    cursor = connect()
     cursor.execute("SELECT * FROM ScheduledClasses")
     result = cursor.fetchall()
     return render(request, 'schedule.html', {'schedulesqlserverconn': result})
 
 
 def profAdd(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
     if request.method=="POST":
         if request.POST.get('LastName') and request.POST.get('FirstName') and request.POST.get('Active'):
             insertvalues=profsqlserverconn()
             insertvalues.LastName = request.POST.get('LastName')
             insertvalues.FirstName = request.POST.get('FirstName')
             insertvalues.Active = request.POST.get('Active')
-            cursor = conn.cursor()
+            cursor = connect()
             cursor.execute("INSERT INTO Professors VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.Active+"')")
             cursor.commit()
             return render(request, 'profAdd.html')
@@ -73,10 +61,6 @@ def profAdd(request):
         return render(request, 'profAdd.html')
 
 def classesAdd(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
     if request.method=="POST":
         if request.POST.get('Name'):
             insertvalues=classessqlserverconn()
@@ -91,7 +75,7 @@ def classesAdd(request):
             insertvalues.Location = request.POST.get('Location')
             insertvalues.MaxCapacity = request.POST.get('MaxCapacity')
             insertvalues.NumberofHouses = request.POST.get('NumberofHouses')
-            cursor = conn.cursor()
+            cursor = connect()
             cursor.execute("INSERT INTO Classes VALUES ('"+insertvalues.Name+"', '"+insertvalues.Year1Type+"', '"+insertvalues.Year2Type+"','"+insertvalues.Year3Type+"' ,'"+insertvalues.Year4Type+"' ,'"+insertvalues.Year5Type+"' ,'"+insertvalues.Year6Type+"' ,'"+insertvalues.Year7Type+"''"+insertvalues.Location+"', '"+insertvalues.MaxCapacity+"' , '"+insertvalues.NumberofHouses+"')")
             cursor.commit()
             return render(request, 'classesAdd.html')
@@ -99,10 +83,6 @@ def classesAdd(request):
         return render(request, 'classesAdd.html')
 
 def studentAdd(request):
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
-                          'Trusted_Connection=yes;')
     if request.method=="POST":
         if request.POST.get('LastName') and request.POST.get('FirstName'):
             insertvalues=studentsqlserverconn()
@@ -112,7 +92,7 @@ def studentAdd(request):
             insertvalues.Year = request.POST.get('Year')
             insertvalues.ElectiveOneID = request.POST.get('ElectiveOneID')
             insertvalues.ElectiveOTwoID = request.POST.get('ElectiveOTwoID')
-            cursor = conn.cursor()
+            cursor = connect()
             cursor.execute("INSERT INTO Students VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.HouseID+"','"+insertvalues.Year+"')")
             cursor.commit()
             return render(request, 'studentAdd.html')
