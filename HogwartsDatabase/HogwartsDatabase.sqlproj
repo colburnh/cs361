@@ -62,6 +62,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="Scripts" />
     <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="dbo\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Houses.sql" />
@@ -82,5 +83,9 @@
     <None Include="Scripts\Post-Deployment\dbo.Students.Table.sql" />
     <None Include="Scripts\Post-Deployment\dbo.StudentsImport.Table.sql" />
     <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment1.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_professors.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_classes.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_students.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_scheduledclasses.sql" />
   </ItemGroup>
 </Project>
