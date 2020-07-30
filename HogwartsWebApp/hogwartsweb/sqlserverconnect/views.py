@@ -20,28 +20,28 @@ def connect():
 #Request for Professor
 def profconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Professors")
+    cursor.execute("EXECUTE dbo.usp_get_professors")
     result=cursor.fetchall()
     return render(request,'professor.html',{'profsqlserverconn':result})
 
 #Request for Student
 def studentconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Students")
+    cursor.execute("EXECUTE dbo.usp_get_students")
     result = cursor.fetchall()
     return render(request, 'student.html', {'studentsqlserverconn': result})
 
 #Request for Classes
 def classesconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Classes")
+    cursor.execute("EXECUTE dbo.usp_get_classes")
     result = cursor.fetchall()
     return render(request, 'classes.html', {'classessqlserverconn': result})
 
 #Request for Scheduled Classes
 def scheduleconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM ScheduledClasses")
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses")
     result = cursor.fetchall()
     return render(request, 'schedule.html', {'schedulesqlserverconn': result})
 
