@@ -1,47 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
-    <title>Professor</title>
+    <title>Student</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'student.css' %}" media="screen">
 </head>
+
 <body>
-    <center>
-        <h1>Scheduled Classes</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        <table border="1">
+    <h1 class="site-title">Student Display</h1>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+            <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+            <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+            <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+            <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+        </ul>
+    </nav>
+        </br>
+        <table class="center">
             <tr>
-                <th>ScheduledClassID</th>
-                <th>ProfessorClassID</th>
-                <th>HouseID</th>
-                <th>StartTime</th>
-                <th>EndTime</th>
-                <th>StartTime</th>
-                <th>DaysoftheWeek</th>
+                <th>Student ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
                 <th>Year</th>
-                <th>MaxOccupancy</th>
-                <th>Occupancy</th>
-                <th>RemainingSpots</th>
-                <th>Location</th>
+                <th>HouseID</th>
+                <th>Elective 1ar</th>
+                <th>Elective 2</th>
             </tr>
-            {% for datadisplay in profsqlserverconn %}
+            {% for datadisplay in studentsqlserverconn %}
             <tr>
-                <td>{{datadisplay.ScheduledClassID}}</td>
-                <td>{{datadisplay.ProfessorClassID}}</td>
+                <td>{{datadisplay.StudentID}}</td>
+                <td>{{datadisplay.LastName}}</td>
+                <td>{{datadisplay.FirstName}}</td>
                 <td>{{datadisplay.HouseID}}</td>
-                <td>{{datadisplay.StartTime}}</td>
-                <td>{{datadisplay.EndTime}}</td>
-                <td>{{datadisplay.DaysoftheWeek}}</td>
                 <td>{{datadisplay.Year}}</td>
-                <td>{{datadisplay.MaxOccupancy}}</td>
-                <td>{{datadisplay.Occupancy}}</td>
-                <td>{{datadisplay.RemainingSpots}}</td>
-                <td>{{datadisplay.Location}}</td>
+                <td>{{datadisplay.ElectiveOneID}}</td>
+                <td>{{datadisplay.ElectiveOTwoID}}</td>
+                <td><a href="/delete/{{datadisplay.StudentID}}">Delete</a></td>
                 
             </tr>
             {% endfor %}
         </table>
-    </center>
+        <a href="{% url 'studentAdd' %}">Add Student</a>
 </body>
