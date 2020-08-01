@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>Connect SQL Server From Django</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'classes.css' %}" media="screen">
 </head>
 <body>
-    <center>
-        <h1>Classes Display</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        <table border="1">
+        <h1 class="site-title">Classes Display</h1>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+                <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+                <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+                <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+                <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+            </ul>
+        </nav>
+        <table class="center">
             <tr>
                 <th>Class ID</th>
                 <th>Name</th>
@@ -41,11 +45,10 @@
                 <td>{{datadisplay.Location}}</td>
                 <td>{{datadisplay.MaxCapacity}}</td>
                 <td>{{datadisplay.NumberofHouses}}</td>
-                <td><a href="/delete/{{datadisplay.ClassId}}">Delete<a/></td>
+                <td class="delete"><a href="/delete/{{datadisplay.ClassId}}">Delete</a></td>
 
             </tr>
             {% endfor %}
         </table>
-        <a href="{% url 'classesAdd' %}">Add Classes<a/>
-    </center>
+        <a href="{% url 'classesAdd' %}">Add Classes</a>
 </body>
