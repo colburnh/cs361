@@ -1,19 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>Student</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'student.css' %}" media="screen">
 </head>
+
 <body>
-    <center>
-        <h1>Student Display</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
+    <h1 class="site-title">Student Display</h1>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+            <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+            <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+            <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+            <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+        </ul>
+    </nav>
         </br>
-        <a href="{% url 'studentAdd' %}">Add Student<a/>
-        <table border="1">
+        <table class="center">
             <tr>
                 <th>Student ID</th>
                 <th>Last Name</th>
@@ -32,11 +36,10 @@
                 <td>{{datadisplay.Year}}</td>
                 <td>{{datadisplay.ElectiveOneID}}</td>
                 <td>{{datadisplay.ElectiveOTwoID}}</td>
-                <td><a href="/delete/{{datadisplay.StudentID}}">Delete<a/></td>
+                <td><a href="/delete/{{datadisplay.StudentID}}">Delete</a></td>
                 
             </tr>
             {% endfor %}
         </table>
-        <a href="{% url 'studentAdd' %}">Add Student<a/>
-    </center>
+        <a href="{% url 'studentAdd' %}">Add Student</a>
 </body>
