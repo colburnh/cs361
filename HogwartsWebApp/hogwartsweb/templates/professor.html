@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>Professor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'professor.css' %}" media="screen">
 </head>
-<body>
-    <center>
-        <h1>Professor Display</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        <table border="1">
+<body>        
+    <h1 class="site-title">Professor Display</h1>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+            <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+            <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+            <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+            <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+        </ul>
+    </nav>
+        <table class="center">
             <tr>
                 <th>Professor ID</th>
                 <th>Last Name</th>
@@ -24,10 +28,9 @@
                 <td>{{datadisplay.LastName}}</td>
                 <td>{{datadisplay.FirstName}}</td>
                 <td>{{datadisplay.Active}}</td>
-                <td><a href="/proffesor/delete/{{datadisplay.ProfessorID}}">Delete<a/></td>
+                <td><a href="/proffesor/delete/{{datadisplay.ProfessorID}}">Delete</a></td>
             </tr>
             {% endfor %}
         </table>
-        <a href="{% url 'profAdd' %}">Add Professor<a/>
-    </center>
+        <a href="{% url 'profAdd' %}">Add Professor</a>
 </body>
