@@ -20,28 +20,28 @@ def connect():
 #Request for Professor
 def profconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Professors")
+    cursor.execute("EXECUTE dbo.usp_get_professors")
     result=cursor.fetchall()
     return render(request,'professor.html',{'profsqlserverconn':result})
 
 #Request for Student
 def studentconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Students")
+    cursor.execute("EXECUTE dbo.usp_get_students")
     result = cursor.fetchall()
     return render(request, 'student.html', {'studentsqlserverconn': result})
 
 #Request for Classes
 def classesconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM Classes")
+    cursor.execute("EXECUTE dbo.usp_get_classes")
     result = cursor.fetchall()
     return render(request, 'classes.html', {'classessqlserverconn': result})
 
 #Request for Scheduled Classes
 def scheduleconnsql(request):
     cursor = connect()
-    cursor.execute("SELECT * FROM ScheduledClasses")
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses")
     result = cursor.fetchall()
     return render(request, 'schedule.html', {'schedulesqlserverconn': result})
 
@@ -54,7 +54,10 @@ def profAdd(request):
             insertvalues.FirstName = request.POST.get('FirstName')
             insertvalues.Active = request.POST.get('Active')
             cursor = connect()
-            cursor.execute("INSERT INTO Professors VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.Active+"')")
+            cursor.execute("EXECUTE usp_insert_professor @firstName='"
+                           +insertvalues.LastName+ "', @LastName='"
+                           +insertvalues.FirstName+ "', @Active='"
+                           +insertvalues.Active+ "'")
             cursor.commit()
             return render(request, 'profAdd.html')
     else:
@@ -76,7 +79,18 @@ def classesAdd(request):
             insertvalues.MaxCapacity = request.POST.get('MaxCapacity')
             insertvalues.NumberofHouses = request.POST.get('NumberofHouses')
             cursor = connect()
-            cursor.execute("INSERT INTO Classes VALUES ('"+insertvalues.Name+"', '"+insertvalues.Year1Type+"', '"+insertvalues.Year2Type+"','"+insertvalues.Year3Type+"' ,'"+insertvalues.Year4Type+"' ,'"+insertvalues.Year5Type+"' ,'"+insertvalues.Year6Type+"' ,'"+insertvalues.Year7Type+"''"+insertvalues.Location+"', '"+insertvalues.MaxCapacity+"' , '"+insertvalues.NumberofHouses+"')")
+            cursor.execute("EXECUTE usp_insert_class @Name='"
+                            +insertvalues.Name+"', @Year1Type='"
+                            +insertvalues.Year1Type+"', @Year2Type='"
+                            +insertvalues.Year2Type+"', @Year3Type='"
+                            +insertvalues.Year3Type+"', @Year4Type='"
+                            +insertvalues.Year4Type+"', @Year5Type='"
+                            +insertvalues.Year5Type+"', @Year6Type='"
+                            +insertvalues.Year6Type+"', @Year7Type='"
+                            +insertvalues.Year7Type+"',@Location='"
+                            +insertvalues.Location+"', @MaxCapacity='"
+                            +insertvalues.MaxCapacity+"', @numberOfHouses='"
+                            +insertvalues.NumberofHouses+"'")
             cursor.commit()
             return render(request, 'classesAdd.html')
     else:
@@ -93,7 +107,13 @@ def studentAdd(request):
             insertvalues.ElectiveOneID = request.POST.get('ElectiveOneID')
             insertvalues.ElectiveOTwoID = request.POST.get('ElectiveOTwoID')
             cursor = connect()
-            cursor.execute("INSERT INTO Students VALUES ('"+insertvalues.LastName+"', '"+insertvalues.FirstName+"', '"+insertvalues.HouseID+"','"+insertvalues.Year+"')")
+            cursor.execute("EXECUTE usp_insert_student @LastName='"
+                            +insertvalues.LastName+ "', @FirstName='"
+                            +insertvalues.FirstName+ "', @HouseID='"
+                            +insertvalues.HouseID+ "', @Year='"
+                            +insertvalues.Year+ "', @ElectiveOneID='"
+                            +insertvalues.ElectiveOneID+ "', @ElectiveTwoID='"
+                            +insertvalues.ElectiveOTwoID+ "'")
             cursor.commit()
             return render(request, 'studentAdd.html')
     else:
