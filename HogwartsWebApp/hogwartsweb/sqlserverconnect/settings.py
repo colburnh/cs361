@@ -26,7 +26,7 @@ SECRET_KEY = '@-s+cedlmu^n_95*dzuz@r=wcx+^za*9!3i(+8(*xavy1h-+y)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-STATICFILES_DIRS = ["/HogwartsWebApp/hogwartsweb/static",]
+STATICFILES_DIRS = ["../HogwartsWebApp/hogwartsweb/static",]
 
 
 # Application definition
