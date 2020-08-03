@@ -10,10 +10,13 @@ def index(request):
 
 def connect():
     #  Used to create connection to the database
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-UD435N0\SQLEXPRESS;'
-                          'Database=TheSortingHat;'
-                          'Trusted_Connection=yes;')
+    conn = pyodbc.connect('Driver={ODBC Driver 13 for SQL Server};'
+                          'Server=tcp:hogwarts361.database.windows.net,1433;'
+                          'Database=HogwartsDatabase;Uid=adminuser;'
+                          'Pwd=HermioneGranger1;'
+                          'Encrypt=yes;'
+                          'TrustServerCertificate=no;'
+                          'Connection Timeout=30;')
     cursor = conn.cursor()
     return cursor
 
