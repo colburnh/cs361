@@ -11,8 +11,8 @@ def index(request):
 def connect():
     #  Used to create connection to the database
     conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-UD435N0\SQLEXPRESS;'
-                          'Database=TheSortingHat;'
+                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
+                          'Database=HogwartsDatabase;'
                           'Trusted_Connection=yes;')
     cursor = conn.cursor()
     return cursor
@@ -118,4 +118,7 @@ def studentAdd(request):
             return render(request, 'studentAdd.html')
     else:
         return render(request, 'studentAdd.html')
-        
+    
+def delete_professor(request,ProfessorID=None):
+    
+    return render(request, 'professor.html')

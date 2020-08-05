@@ -26,5 +26,6 @@ urlpatterns = [
     path('schedule/',views.scheduleconnsql, name='schedule'),
     path('/profAdd',views.profAdd, name='profAdd'),
     path('/studentAdd',views.studentAdd, name='studentAdd'),
-    path('/classesAdd',views.classesAdd, name='classesAdd')
+    path('/classesAdd',views.classesAdd, name='classesAdd'),
+    path('/delete/<int:pk>',views.delete_professor, name='professorDelete')
 ]
