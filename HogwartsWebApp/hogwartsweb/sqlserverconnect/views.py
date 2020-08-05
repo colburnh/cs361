@@ -119,6 +119,15 @@ def studentAdd(request):
     else:
         return render(request, 'studentAdd.html')
     
+#delete functions
 def delete_professor(request,ProfessorID=None):
     
     return render(request, 'professor.html')
+
+def delete_student(request,StudentID=None):
+    
+    return render(request, 'student.html')
+
+def delete_classes(request,ClassId=None):
+    
+    return render(request, 'classes.html')
