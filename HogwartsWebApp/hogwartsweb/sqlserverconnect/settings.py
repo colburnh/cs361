@@ -25,7 +25,7 @@ SECRET_KEY = '@-s+cedlmu^n_95*dzuz@r=wcx+^za*9!3i(+8(*xavy1h-+y)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 STATICFILES_DIRS = ["C:/Users/Jered Abate/source/repos/cs361/HogwartsWebApp/hogwartsweb/static",]
 
 
