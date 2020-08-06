@@ -10,9 +10,9 @@ def index(request):
 
 def connect():
     #  Used to create connection to the database
-    conn = pyodbc.connect('Driver={sql server};'
-                          'Server=DESKTOP-13TEU52\SQLEXPRESS;'
-                          'Database=HogwartsDatabase;'
+    conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
+                          'Server=DESKTOP-UD435N0\SQLEXPRESS;'
+                          'Database=TheSortingHat;'
                           'Trusted_Connection=yes;')
     cursor = conn.cursor()
     return cursor
@@ -120,14 +120,23 @@ def studentAdd(request):
         return render(request, 'studentAdd.html')
     
 #delete functions
-def delete_professor(request,ProfessorID=None):
-    
-    return render(request, 'professor.html')
+def delete_professor(request,pk):
 
-def delete_student(request,StudentID=None):
-    
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_professor @ProfessorID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return profconnsql(request)
+
+    return render(request, 'profDelete.html', context)
+
+def delete_student(request,pk):
+    print('Delete Professor')
     return render(request, 'student.html')
 
-def delete_classes(request,ClassId=None):
-    
+def delete_classes(request,pk):
+    print('Delete Professor')
     return render(request, 'classes.html')

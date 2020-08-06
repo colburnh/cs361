@@ -90,5 +90,8 @@
     <Build Include="dbo\Stored Procedures\usp_insert_class.sql" />
     <Build Include="dbo\Stored Procedures\usp_insert_professor.sql" />
     <Build Include="dbo\Stored Procedures\usp_insert_student.sql" />
+    <Build Include="dbo\Stored Procedures\usp_delete_class.sql" />
+    <Build Include="dbo\Stored Procedures\usp_delete_student.sql" />
+    <Build Include="dbo\Stored Procedures\usp_delete_professor.sql" />
   </ItemGroup>
 </Project>
