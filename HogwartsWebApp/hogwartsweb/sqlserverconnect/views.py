@@ -134,9 +134,27 @@ def delete_professor(request,pk):
     return render(request, 'profDelete.html', context)
 
 def delete_student(request,pk):
-    print('Delete Professor')
-    return render(request, 'student.html')
+
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_student @StudentID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return studentconnsql(request)
+
+    return render(request, 'studentDelete.html', context)
 
 def delete_classes(request,pk):
-    print('Delete Professor')
-    return render(request, 'classes.html')
+
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_class @ClassID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return classesconnsql(request)
+
+    return render(request, 'classDelete.html', context)

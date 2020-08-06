@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
-    <title>ProfessorDelete</title>
+    <title>ClassDelete</title>
 </head>
 <body>
     <center>
-        <h1>Professor Delete</h1>
+        <h1>Class Delete</h1>
         <hr/>
         <a href="{% url 'index' %}">Home<a/>
         <a href="{% url 'prof' %}">View Professors<a/>
@@ -12,13 +12,13 @@
         <a href="{% url 'classes' %}">View Classes<a/>
         <a href="{% url 'schedule' %}">View Schedule<a/>
         </br>
-		<p>Are you sure you want to delete the Professor?</p>
-        <form action="/profDelete/{{item}}" method="POST">
+		<p>Are you sure you want to delete the class?</p>
+        <form action="/classDelete/{{item}}" method="POST">
             {% csrf_token %}
            
-		    <a href="{% url 'prof' %}">Cancel</a>
+		    <a href="{% url 'classes' %}">Cancel</a>
 		   
-            <input type="submit" value="Confirm" onclick="return alert('Professor Deleted')" />
+            <input type="submit" value="Confirm" onclick="return alert('Class Deleted')" />
          </form>
     </center>
 
