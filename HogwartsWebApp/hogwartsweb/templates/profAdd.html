@@ -1,35 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>ProfessorAdd</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'profAdd.css' %}" media="screen">
 </head>
 <body>
-    <center>
-        <h1>Professor Add</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        </br>
+        <h1 class="site-title">Professor Add</h1>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+                <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+                <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+                <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+                <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+            </ul>
+        </nav>
         <form method="POST">
             {% csrf_token %}
-            <table border ="1">
+            <table class="center">
                 <tr>
                     <td> Last Name</td>
-                    <td><input type="text" placeholder="Professor Last Name .." name="LastName"
+                    <td><input type="text" placeholder="Professor Last Name .." name="LastName"></td>
                 </tr>
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" placeholder="Professor First  Name .." name="FirstName"
+                    <td><input type="text" placeholder="Professor First  Name .." name="FirstName"></td>
                 </tr>
                 <tr>
                     <td>Active</td>
-                    <td><input type="text" placeholder="Professor Active .." name="Active"
+                    <td><input type="text" placeholder="Professor Active .." name="Active"></td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" onclick="return alert('Professor Added')" />
+            <input class="button"type="submit" value="Submit" onclick="return alert('Professor Added')">
          </form>
-    </center>
-
 </body>
