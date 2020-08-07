@@ -65,3 +65,53 @@ a:hover{
 .button:hover {
     background-color: #e7e7e7;
 }
+
+.block-container{
+    background-color: rgb(215, 215, 215);
+    margin: 0;
+    border: 0;
+    padding: 140px;
+    padding-top: 35px;
+    padding-bottom: 0px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    min-width: 75%;
+}
+
+.block{
+    border-radius: 0%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 25%;
+    margin: 10px;
+    padding: 15px;
+    min-width: 180px;
+    max-width: 25%;
+    display: inline-flex;
+    background-color: rgb(233, 230, 230);
+    border-style:dotted;
+    border-color: rgb(0, 0, 0);
+}
+
+
+.block-title{
+    text-indent: 50px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.block-content{
+    text-indent: 50px;
+}
+
+.fake{
+    font-size: 16px;
+    position:bottom;
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.fake:hover {
+    background-color: #e7e7e7;
+}
