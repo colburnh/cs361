@@ -1,46 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>ProfessorAdd</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'studentAdd.css' %}" media="screen">
 </head>
 <body>
-    <center>
-        <h1>Student Add</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        </br>
+        <h1 class="site-title">Student Add</h1>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+                <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+                <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+                <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+                <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+            </ul>
+        </nav>
         <form method="POST">
             {% csrf_token %}
-            <table border ="1">
+            <table class="center">
                 <tr>
                     <td> Last Name</td>
-                    <td><input type="text" placeholder="Student Last Name .." name="LastName"
+                    <td><input type="text" placeholder="Student Last Name .." name="LastName"></td>
                 </tr>
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" placeholder="Student First  Name .." name="FirstName"
+                    <td><input type="text" placeholder="Student First  Name .." name="FirstName"></td>
                 </tr>
                 <tr>
                     <td>HouseID</td>
-                    <td><input type="text" placeholder="HouseID .." name="HouseID"
+                    <td><input type="text" placeholder="HouseID .." name="HouseID"></td>
                 </tr>
                 <tr>
                     <td>Year</td>
-                    <td><input type="text" placeholder="Year .." name="Year"
+                    <td><input type="text" placeholder="Year .." name="Year"></td>
                 </tr>
                 <tr>
                     <td>ElectiveOneID</td>
-                    <td><input type="text" placeholder="ElectiveOneID .." name="ElectiveOneID"
+                    <td><input type="text" placeholder="ElectiveOneID .." name="ElectiveOneID"></td>
                 </tr>
                 <tr>
                     <td>ElectiveOTwoID</td>
-                    <td><input type="text" placeholder="ElectiveOTwoID .." name="ElectiveOTwoID"
+                    <td><input type="text" placeholder="ElectiveOTwoID .." name="ElectiveOTwoID"></td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" onclick="return alert('Student Added')" />
-         </form>
-    </center>
+            <input class="button" type="submit" value="Submit" onclick="return alert('Student Added')" />
+        </form>
 </body>
