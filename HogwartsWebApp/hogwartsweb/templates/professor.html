@@ -15,6 +15,9 @@
             <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
         </ul>
     </nav>
+    <button class="button">
+        <a href="{% url 'profAdd' %}">Add Professor</a>
+    </button>
         <table class="center">
             <tr>
                 <th>Professor ID</th>
@@ -32,5 +35,4 @@
             </tr>
             {% endfor %}
         </table>
-        <a href="{% url 'profAdd' %}">Add Professor</a>
 </body>

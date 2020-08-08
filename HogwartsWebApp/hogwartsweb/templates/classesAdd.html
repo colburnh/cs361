@@ -1,66 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <title>Classes Add</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'classesAdd.css' %}" media="screen">
 </head>
 <body>
-    <center>
-        <h1>Classes Add</h1>
-        <hr/>
-        <a href="{% url 'index' %}">Home<a/>
-        <a href="{% url 'prof' %}">View Professors<a/>
-        <a href="{% url 'student' %}">View Students<a/>
-        <a href="{% url 'classes' %}">View Classes<a/>
-        <a href="{% url 'schedule' %}">View Schedule<a/>
-        </br>
+    <h1 class="site-title">Classes Add</h1>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+            <li class="navitem navlink"><a href="{% url 'prof' %}">View Professors</a></li>
+            <li class="navitem navlink"><a href="{% url 'student' %}">View Students</a></li>
+            <li class="navitem navlink"><a href="{% url 'classes' %}">View Classes</a></li>
+            <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+        </ul>
+    </nav>
         <form method="POST">
             {% csrf_token %}
-            <table border ="1">
+            <table class="center">
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" placeholder="Student First  Name .." name="Name"
+                    <td><input type="text" placeholder="Student First  Name .." name="Name"></td>
                 </tr>
                 <tr>
                     <td>Year1Type</td>
-                    <td><input type="text" placeholder="Year1Type .." name="Year1Type"
+                    <td><input type="text" placeholder="Year1Type .." name="Year1Type"></td>
                 </tr>
                 <tr>
                     <td>Year2Type</td>
-                    <td><input type="text" placeholder="Year2Type .." name="Year2Type"
+                    <td><input type="text" placeholder="Year2Type .." name="Year2Type"></td>
                 </tr>
                 <tr>
                     <td>Year3Type</td>
-                    <td><input type="text" placeholder="Year3Type .." name="Year3Type"
+                    <td><input type="text" placeholder="Year3Type .." name="Year3Type"></td>
                 </tr>
                 <tr>
                     <td>Year4Type</td>
-                    <td><input type="text" placeholder="Year4Type .." name="Year4Type"
+                    <td><input type="text" placeholder="Year4Type .." name="Year4Type"></td>
                 </tr>
                 <tr>
                     <td>Year5Type</td>
-                    <td><input type="text" placeholder="Year5Type .." name="Year5Type"
+                    <td><input type="text" placeholder="Year5Type .." name="Year5Type"></td>
                 </tr>
                 <tr>
                     <td>Year6Type</td>
-                    <td><input type="text" placeholder="Year6Type .." name="Year6Type"
+                    <td><input type="text" placeholder="Year6Type .." name="Year6Type"></td>
                 </tr>
                 <tr>
                     <td>Year7Type</td>
-                    <td><input type="text" placeholder="Year7Type .." name="Year7Type"
+                    <td><input type="text" placeholder="Year7Type .." name="Year7Type"></td>
                 </tr>
                 <tr>
                     <td>Location</td>
-                    <td><input type="text" placeholder="Location .." name="Location"
+                    <td><input type="text" placeholder="Location .." name="Location"></td>
                 </tr>
                 <tr>
                     <td>MaxCapacity</td>
-                    <td><input type="text" placeholder="MaxCapacity .." name="MaxCapacity"
+                    <td><input type="text" placeholder="MaxCapacity .." name="MaxCapacity"></td>
                 </tr>
                 <tr>
                     <td>NumberofHouses</td>
-                    <td><input type="text" placeholder="NumberofHouses .." name="NumberofHouses"
+                    <td><input type="text" placeholder="NumberofHouses .." name="NumberofHouses"></td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" onclick="return alert('Classes Added')" />
-         </form>
-    </center>
+                <input class="button" type="submit" value="Submit" onclick="return alert('Classes Added')">
+        </form>
 </body>
