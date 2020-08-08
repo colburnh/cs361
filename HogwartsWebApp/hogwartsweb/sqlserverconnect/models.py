@@ -32,6 +32,7 @@ class classessqlserverconn(models.Model):
     MaxCapacity = models.IntegerField()
     NumberofHouses = models.IntegerField()
 
+#GET Schedule Database
 class schedulesqlserverconn(models.Model):
     ScheduledClassID = models.IntegerField()
     ProfessorClassID = models.IntegerField()
