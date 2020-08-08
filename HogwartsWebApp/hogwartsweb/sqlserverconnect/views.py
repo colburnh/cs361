@@ -48,7 +48,7 @@ def scheduleconnsql(request):
     result = cursor.fetchall()
     return render(request, 'schedule.html', {'schedulesqlserverconn': result})
 
-
+#Request to add Professor
 def profAdd(request):
     if request.method=="POST":
         if request.POST.get('LastName') and request.POST.get('FirstName') and request.POST.get('Active'):
@@ -66,6 +66,7 @@ def profAdd(request):
     else:
         return render(request, 'profAdd.html')
 
+#Request to add Class
 def classesAdd(request):
     if request.method=="POST":
         if request.POST.get('Name'):
@@ -99,6 +100,7 @@ def classesAdd(request):
     else:
         return render(request, 'classesAdd.html')
 
+#Request to add Student
 def studentAdd(request):
     if request.method=="POST":
         if request.POST.get('LastName') and request.POST.get('FirstName'):
