@@ -7,6 +7,7 @@ class profsqlserverconn(models.Model):
     FirstName = models.CharField(max_length=100)
     Active = models.IntegerField()
 
+
 #GET Student Database
 class studentsqlserverconn(models.Model):
     StudentID = models.IntegerField()

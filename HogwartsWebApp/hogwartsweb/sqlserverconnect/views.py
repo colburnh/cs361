@@ -10,7 +10,7 @@ def index(request):
 
 def connect():
     #  Used to create connection to the database
-    conn = pyodbc.connect('Driver={sql server};'
+    conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
                           'Server=DESKTOP-UD435N0\SQLEXPRESS;'
                           'Database=TheSortingHat;'
                           'Trusted_Connection=yes;')
@@ -118,4 +118,43 @@ def studentAdd(request):
             return render(request, 'studentAdd.html')
     else:
         return render(request, 'studentAdd.html')
-        
+    
+#delete functions
+def delete_professor(request,pk):
+
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_professor @ProfessorID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return profconnsql(request)
+
+    return render(request, 'profDelete.html', context)
+
+def delete_student(request,pk):
+
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_student @StudentID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return studentconnsql(request)
+
+    return render(request, 'studentDelete.html', context)
+
+def delete_classes(request,pk):
+
+    context = {"item":pk}
+	
+    if request.method == "POST":
+        cursor = connect()
+        cursor.execute("EXECUTE usp_delete_class @ClassID='"
+                        +str(pk)+ "'")
+        cursor.commit()
+        return classesconnsql(request)
+
+    return render(request, 'classDelete.html', context)

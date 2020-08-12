@@ -24,7 +24,10 @@ urlpatterns = [
     path('student/',views.studentconnsql, name='student'),
     path('classes/',views.classesconnsql, name='classes'),
     path('schedule/',views.scheduleconnsql, name='schedule'),
-    path('/profAdd',views.profAdd, name='profAdd'),
-    path('/studentAdd',views.studentAdd, name='studentAdd'),
-    path('/classesAdd',views.classesAdd, name='classesAdd')
+    path('profAdd',views.profAdd, name='profAdd'),
+    path('studentAdd',views.studentAdd, name='studentAdd'),
+    path('classesAdd',views.classesAdd, name='classesAdd'),
+    path('profDelete/<int:pk>',views.delete_professor, name='professorDelete'),
+    path('studentDelete/<int:pk>',views.delete_student, name='studentDelete'),
+    path('classDelete/<int:pk>',views.delete_classes, name='classesDelete')
 ]

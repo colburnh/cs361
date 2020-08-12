@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>StudentDelete</title>
+</head>
+<body>
+    <center>
+        <h1>Student Delete</h1>
+        <hr/>
+        <a href="{% url 'index' %}">Home<a/>
+        <a href="{% url 'prof' %}">View Professors<a/>
+        <a href="{% url 'student' %}">View Students<a/>
+        <a href="{% url 'classes' %}">View Classes<a/>
+        <a href="{% url 'schedule' %}">View Schedule<a/>
+        </br>
+		<p>Are you sure you want to delete the student?</p>
+        <form action="/studentDelete/{{item}}" method="POST">
+            {% csrf_token %}
+           
+		    <a href="{% url 'student' %}">Cancel</a>
+		   
+            <input type="submit" value="Confirm" onclick="return alert('Student Deleted')" />
+         </form>
+    </center>
+
+</body>
