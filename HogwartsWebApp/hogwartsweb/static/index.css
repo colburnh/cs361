@@ -52,12 +52,12 @@ a:hover{
     padding: 9px 18px;
 }
 
-.button{
+button{
     font-size: 16px;
     position:fixed;
     right:100px;
     bottom:10px;
-    background-color: white;
+    background-color: orange;
     color: black;
     border: 2px solid #e7e7e7;
 }
