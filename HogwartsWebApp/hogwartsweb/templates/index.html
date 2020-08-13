@@ -12,22 +12,26 @@
 
   <body class="backg">
     <header>
-      <h1 class="site-title"><i class="fa fa-magic"></i>Hogwarts School of Witchcraft & Wizardry</h1>
-      <h2 class="site-introduction">Welcome to Hogwarts School of Witchcraft & Wizardry. The feast is about to begin in the Great Hall where the Sorting Ceremony will take place. Please wait here in the Entrance Hall while I announce you...</h2>
+		<div class="titleContainer">
+			<div class="titleCenter">
+				<h1 class="site-title"><i class="fa fa-magic"></i>Hogwarts School of Witchcraft & Wizardry</h1>
+			</div>
+		</div>
       <nav class="navbar">
         <ul class="navlist">
           <li class="navitem navlink" ><a href="{% url 'index' %}">Home</a></li>
           <li class="navitem navlink"><a href="{% url 'prof' %}">Professors</a></li>
           <li class="navitem navlink"><a href="{% url 'student' %}">Students<a></li>
           <li class="navitem navlink"><a href="{% url 'classes' %}">Classes</a></li>
-          <li class="navitem navlink"><a href="{% url 'schedule' %}">Schedule</a></li>
         </ul>
       </nav>
     </header>
     <main class="home-page">
 
-		<div>
-			<button type="button">Generate Schedule</button>
+		<div class="buttonContainer">
+			<div class="buttonCenter">
+				<a class="myButton" href="{% url 'schedule' %}"> Generate Schedule</a>
+			</div>
 		</div>
 
     </main>

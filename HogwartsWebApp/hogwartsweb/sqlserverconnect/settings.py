@@ -26,8 +26,7 @@ SECRET_KEY = '@-s+cedlmu^n_95*dzuz@r=wcx+^za*9!3i(+8(*xavy1h-+y)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
-                    '/HogwartsWebApp/hogwartswebapp/static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # Application definition
