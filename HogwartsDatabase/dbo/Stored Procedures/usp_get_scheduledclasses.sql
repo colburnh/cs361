@@ -1,4 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[usp_get_scheduledclasses]
+	@year int
 AS
 BEGIN
 
@@ -24,5 +25,9 @@ BEGIN
 			ON pc.ProfessorID = p.ProfessorID
 		JOIN Houses h
 			ON sc.HouseID = h.HouseID
+	WHERE
+		Year = @year
+	ORDER BY 
+		StartTime
 
 END

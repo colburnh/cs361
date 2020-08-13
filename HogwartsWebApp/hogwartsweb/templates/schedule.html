@@ -16,7 +16,7 @@
         <ul class="navlist">
           <li class="navitem navlink" ><a href="{% url 'index' %}">Home</a></li>
           <li class="navitem navlink"><a href="{% url 'prof' %}">Professors</a></li>
-          <li class="navitem navlink"><a href="{% url 'student' %}">Students<a></li>
+          <li class="navitem navlink"><a href="{% url 'student' %}">Students</a></li>
           <li class="navitem navlink"><a href="{% url 'classes' %}">Classes</a></li>
         </ul>
       </nav>
@@ -32,13 +32,13 @@
 						<button id="b2" onclick="showTable(2)" class="myButton" type="button">Year 2</button>
 					</li>
 					<li class="buttonYears">
-						<button id="b2" onclick="showTable(3)" class="myButton" type="button">Year 3</button>
+						<button id="b3" onclick="showTable(3)" class="myButton" type="button">Year 3</button>
 					</li>
 					<li class="buttonYears">
-						<button id="b2" onclick="showTable(4)" class="myButton" type="button">Year 4</button>
+						<button id="b4" onclick="showTable(4)" class="myButton" type="button">Year 4</button>
 					</li>
 					<li class="buttonYears">
-						<button id="b2" onclick="hideTables()" class="myButton" type="button">Year 5</button>
+						<button id="b5" onclick="showTable(5)" class="myButton" type="button">Year 5</button>
 					</li>
 				</ul>
 			</div>
@@ -82,7 +82,7 @@
 					<th>Days</th>
 					<th>Year</th>
 				</tr>
-				{% for datadisplay in schedulesqlserverconn %}
+				{% for datadisplay in year1 %}
 				<tr>
 					<td>{{datadisplay.Professor}}</td>
 					<td>{{datadisplay.Class}}</td>
@@ -99,15 +99,17 @@
 			<table id="t2" class="center">
 				<tr>
 					<th>Professor</th>
+					<th>Class</th>
 					<th>House</th>
 					<th>Start Time</th>
 					<th>End Time</th>
 					<th>Days</th>
 					<th>Year</th>
 				</tr>
-				{% for datadisplay in schedulesqlserverconn %}
+				{% for datadisplay in year2 %}
 				<tr>
 					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.Class}}</td>
 					<td>{{datadisplay.House}}</td>
 					<td>{{datadisplay.StartTime}}</td>
 					<td>{{datadisplay.EndTime}}</td>
@@ -128,7 +130,7 @@
 					<th>Days</th>
 					<th>Year</th>
 				</tr>
-				{% for datadisplay in schedulesqlserverconn %}
+				{% for datadisplay in year3 %}
 				<tr>
 					<td>{{datadisplay.Professor}}</td>
 					<td>{{datadisplay.Class}}</td>
@@ -152,7 +154,7 @@
 					<th>Days</th>
 					<th>Year</th>
 				</tr>
-				{% for datadisplay in schedulesqlserverconn %}
+				{% for datadisplay in year4 %}
 				<tr>
 					<td>{{datadisplay.Professor}}</td>
 					<td>{{datadisplay.Class}}</td>
@@ -176,7 +178,7 @@
 					<th>Days</th>
 					<th>Year</th>
 				</tr>
-				{% for datadisplay in schedulesqlserverconn %}
+				{% for datadisplay in year5 %}
 				<tr>
 					<td>{{datadisplay.Professor}}</td>
 					<td>{{datadisplay.Class}}</td>
