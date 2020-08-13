@@ -16,32 +16,23 @@
         </nav>
         <table class="center">
             <tr>
-                <th>ScheduledClassID</th>
-                <th>ProfessorClassID</th>
-                <th>HouseID</th>
-                <th>StartTime</th>
-                <th>EndTime</th>
-                <th>StartTime</th>
-                <th>DaysoftheWeek</th>
+                <th>Professor</th>
+                <th>Class</th>
+				<th>House</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Days</th>
                 <th>Year</th>
-                <th>MaxOccupancy</th>
-                <th>Occupancy</th>
-                <th>RemainingSpots</th>
-                <th>Location</th>
             </tr>
-            {% for datadisplay in profsqlserverconn %}
+            {% for datadisplay in schedulesqlserverconn %}
             <tr>
-                <td>{{datadisplay.ScheduledClassID}}</td>
-                <td>{{datadisplay.ProfessorClassID}}</td>
-                <td>{{datadisplay.HouseID}}</td>
+                <td>{{datadisplay.Professor}}</td>
+                <td>{{datadisplay.Class}}</td>
+				<td>{{datadisplay.House}}</td>
                 <td>{{datadisplay.StartTime}}</td>
                 <td>{{datadisplay.EndTime}}</td>
                 <td>{{datadisplay.DaysoftheWeek}}</td>
                 <td>{{datadisplay.Year}}</td>
-                <td>{{datadisplay.MaxOccupancy}}</td>
-                <td>{{datadisplay.Occupancy}}</td>
-                <td>{{datadisplay.RemainingSpots}}</td>
-                <td>{{datadisplay.Location}}</td>
                 
             </tr>
             {% endfor %}
