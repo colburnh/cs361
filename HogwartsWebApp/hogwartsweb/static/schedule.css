@@ -59,12 +59,31 @@ a:hover{
 	
 }
 
+#t1 {
+	display: none;
+}
+
+#t2 {
+	display: none;
+}
+
+#t3 {
+	display: none;
+}
+
+#t4 {
+	display: none;
+}
+
+#t5 {
+	display: none;
+}
+
 .table,th,td{
     border: 1px solid black;
     color: rgb(0, 0, 0);
     position:middle;
     margin: 30px;
-	display: none;
 }
 
 table.center {
@@ -153,4 +172,12 @@ tr:nth-child(even){
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.tableCenter {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }

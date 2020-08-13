@@ -22,51 +22,175 @@
       </nav>
     </header>
 	
-		<div class="buttonContainer">
+		<div id="buttonContainer" class="buttonContainer">
 			<div class="buttonCenter">
 				<ul class="buttonList">
 					<li class="buttonYears">
-						<button class="myButton" type="button">Year 1</button>
+						<button id="b1" onclick="showTable(1)" class="myButton" type="button">Year 1</button>
 					</li>
 					<li class="buttonYears">
-						<button class="myButton" type="button">Year 2</button>
+						<button id="b2" onclick="showTable(2)" class="myButton" type="button">Year 2</button>
 					</li>
 					<li class="buttonYears">
-						<button class="myButton" type="button">Year 3</button>
+						<button id="b2" onclick="showTable(3)" class="myButton" type="button">Year 3</button>
 					</li>
 					<li class="buttonYears">
-						<button class="myButton" type="button">Year 4</button>
+						<button id="b2" onclick="showTable(4)" class="myButton" type="button">Year 4</button>
 					</li>
 					<li class="buttonYears">
-						<button class="myButton" type="button">Year 5</button>
+						<button id="b2" onclick="hideTables()" class="myButton" type="button">Year 5</button>
 					</li>
 				</ul>
 			</div>
 		</div>
-	
-        <table class="center">
-            <tr>
-                <th>Professor</th>
-                <th>Class</th>
-				<th>House</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Days</th>
-                <th>Year</th>
-            </tr>
-            {% for datadisplay in schedulesqlserverconn %}
-            <tr>
-                <td>{{datadisplay.Professor}}</td>
-                <td>{{datadisplay.Class}}</td>
-				<td>{{datadisplay.House}}</td>
-                <td>{{datadisplay.StartTime}}</td>
-                <td>{{datadisplay.EndTime}}</td>
-                <td>{{datadisplay.DaysoftheWeek}}</td>
-                <td>{{datadisplay.Year}}</td>
-                
-            </tr>
-            {% endfor %}
-        </table>
+		
+		<script>
+		
+			function hideTables() {
+				var t1 = document.getElementById("t1");
+				var t2 = document.getElementById("t2");
+				var t3 = document.getElementById("t3");
+				var t4 = document.getElementById("t4");
+				var t5 = document.getElementById("t5");
+				
+				t1.style.display = "none";
+				t2.style.display = "none";
+				t3.style.display = "none";
+				t4.style.display = "none";
+				t5.style.display = "none";
+			};
+		
+			function showTable(num) {
+				hideTables();
+				
+				var y = document.getElementById("t" + num.toString());
+				
+				y.style.display = "block";
+			};
+		
+		</script>
+		
+		
+		<div class="tableCenter">
+			<table id="t1" class="center">
+				<tr>
+					<th>Professor</th>
+					<th>Class</th>
+					<th>House</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Days</th>
+					<th>Year</th>
+				</tr>
+				{% for datadisplay in schedulesqlserverconn %}
+				<tr>
+					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.Class}}</td>
+					<td>{{datadisplay.House}}</td>
+					<td>{{datadisplay.StartTime}}</td>
+					<td>{{datadisplay.EndTime}}</td>
+					<td>{{datadisplay.DaysoftheWeek}}</td>
+					<td>{{datadisplay.Year}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+			
+			<table id="t2" class="center">
+				<tr>
+					<th>Professor</th>
+					<th>House</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Days</th>
+					<th>Year</th>
+				</tr>
+				{% for datadisplay in schedulesqlserverconn %}
+				<tr>
+					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.House}}</td>
+					<td>{{datadisplay.StartTime}}</td>
+					<td>{{datadisplay.EndTime}}</td>
+					<td>{{datadisplay.DaysoftheWeek}}</td>
+					<td>{{datadisplay.Year}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+			
+			<table id="t3" class="center">
+				<tr>
+					<th>Professor</th>
+					<th>Class</th>
+					<th>House</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Days</th>
+					<th>Year</th>
+				</tr>
+				{% for datadisplay in schedulesqlserverconn %}
+				<tr>
+					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.Class}}</td>
+					<td>{{datadisplay.House}}</td>
+					<td>{{datadisplay.StartTime}}</td>
+					<td>{{datadisplay.EndTime}}</td>
+					<td>{{datadisplay.DaysoftheWeek}}</td>
+					<td>{{datadisplay.Year}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+			
+			<table id="t4" class="center">
+				<tr>
+					<th>Professor</th>
+					<th>Class</th>
+					<th>House</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Days</th>
+					<th>Year</th>
+				</tr>
+				{% for datadisplay in schedulesqlserverconn %}
+				<tr>
+					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.Class}}</td>
+					<td>{{datadisplay.House}}</td>
+					<td>{{datadisplay.StartTime}}</td>
+					<td>{{datadisplay.EndTime}}</td>
+					<td>{{datadisplay.DaysoftheWeek}}</td>
+					<td>{{datadisplay.Year}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+			
+			<table id="t5" class="center">
+				<tr>
+					<th>Professor</th>
+					<th>Class</th>
+					<th>House</th>
+					<th>Start Time</th>
+					<th>End Time</th>
+					<th>Days</th>
+					<th>Year</th>
+				</tr>
+				{% for datadisplay in schedulesqlserverconn %}
+				<tr>
+					<td>{{datadisplay.Professor}}</td>
+					<td>{{datadisplay.Class}}</td>
+					<td>{{datadisplay.House}}</td>
+					<td>{{datadisplay.StartTime}}</td>
+					<td>{{datadisplay.EndTime}}</td>
+					<td>{{datadisplay.DaysoftheWeek}}</td>
+					<td>{{datadisplay.Year}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+			
+		</div>
 		
 		
 </body>
