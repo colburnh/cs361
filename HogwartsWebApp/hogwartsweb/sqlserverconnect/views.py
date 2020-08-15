@@ -12,7 +12,7 @@ def connect():
     #  Used to create connection to the database
     conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
                           'Server=DESKTOP-UD435N0\SQLEXPRESS;'
-                          'Database=TheSortingHat;'
+                          'Database=HogwartsDatabase;'
                           'Trusted_Connection=yes;')
     cursor = conn.cursor()
     return cursor
