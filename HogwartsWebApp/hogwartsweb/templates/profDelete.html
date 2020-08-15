@@ -7,12 +7,16 @@
 <body>    
     <block class = "center">
         <h1 class="site-title">Professor Delete</h1>
-        <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'prof' %}">View Professors</a>
-        <a href="{% url 'student' %}">View Students</a>
-        <a href="{% url 'classes' %}">View Classes</a>
-        <a href="{% url 'schedule' %}">View Schedule</a>
-        <table class = "center">
+        <nav class="navbar">
+            <ul class="navlist">
+              <li class="navitem navlink"><a href="{% url 'index' %}">Home</a></li>
+              <li class="navitem navlink"><a href="{% url 'prof' %}">Professors</a></li>
+              <li class="navitem navlink"><a href="{% url 'student' %}">Students<a></li>
+              <li class="navitem navlink"><a href="{% url 'classes' %}">Classes</a></li>
+              <li class="navitem navlink"><a href="{% url 'schedule' %}">View Schedule</a></li>
+            </ul>
+          </nav>
+
 		<p>Are you sure you want to delete the Professor?</p>
         <form action="/profDelete/{{item}}" method="POST">
             {% csrf_token %}
@@ -21,6 +25,6 @@
 		   
             <input type="submit" value="Confirm" onclick="return alert('Professor Deleted')" />
          </form>
-        </block>
+    </block>
 
 </body>
