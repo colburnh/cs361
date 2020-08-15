@@ -16,6 +16,30 @@
     font-weight: 100;
 }
 
+.titleContainer {
+  height: 100px;
+  position: relative;
+}
+
+.titleCenter {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.subtitleCenter {
+  display: none;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 body{
     font-style: normal;
     font-family: 'Roboto';
@@ -28,7 +52,11 @@ a{
 }
 
 a:hover{
-    color: rgb(0, 17, 252);  
+    color: rgb(0, 0, 0); 
+	border-style: solid;
+	border-radius: 2px;
+	border-width: 1px;
+	
 }
 
 .navbar{
@@ -37,13 +65,17 @@ a:hover{
     padding: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
-    overflow: auto;
     margin: 10px;
+	height: 50px;
+    position: relative;
 }
 
 .navlist{
-    text-indent: 50px;
-    margin: 0;
+    position: absolute;
+	top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     padding: 0;
 }
 
@@ -52,18 +84,29 @@ a:hover{
     padding: 9px 18px;
 }
 
-.button{
-    font-size: 16px;
-    position:fixed;
-    right:100px;
-    bottom:10px;
-    background-color: white;
-    color: black;
-    border: 2px solid #e7e7e7;
+.myButton {
+	box-shadow: 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:3px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:19px 54px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
 }
-
-.button:hover {
-    background-color: #e7e7e7;
+.myButton:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
 
 .block-container{
@@ -114,4 +157,18 @@ a:hover{
 
 .fake:hover {
     background-color: #e7e7e7;
+}
+
+.buttonContainer {
+  height: 100px;
+  position: relative;
+}
+
+.buttonCenter {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

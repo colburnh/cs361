@@ -41,9 +41,21 @@ def classesconnsql(request):
 #Request for Scheduled Classes
 def scheduleconnsql(request):
     cursor = connect()
-    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses")
-    result = cursor.fetchall()
-    return render(request, 'schedule.html', {'schedulesqlserverconn': result})
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses @year='1'")
+    result1 = cursor.fetchall()
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses @year='2'")
+    result2 = cursor.fetchall()
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses @year='3'")
+    result3 = cursor.fetchall()
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses @year='4'")
+    result4 = cursor.fetchall()
+    cursor.execute("EXECUTE dbo.usp_get_scheduledclasses @year='5'")
+    result5 = cursor.fetchall()
+
+    context = {'year1':result1, 'year2':result2, 'year3':result3, 'year4':result4, 'year5':result5}
+
+
+    return render(request, 'schedule.html', context)
 
 
 def profAdd(request):
